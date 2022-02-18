@@ -11,6 +11,7 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String name;
     private String address;
     private String city;
     private String state;
@@ -20,7 +21,8 @@ public class Publisher {
 
     }
 
-    public Publisher(String address, String city, String state, String zipcode) {
+    public Publisher(String name, String address, String city, String state, String zipcode) {
+        this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
@@ -33,6 +35,14 @@ public class Publisher {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
@@ -86,6 +96,7 @@ public class Publisher {
     public String toString() {
         return "Publisher{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
