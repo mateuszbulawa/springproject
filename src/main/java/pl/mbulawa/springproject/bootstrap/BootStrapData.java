@@ -1,18 +1,18 @@
-package bootstrap;
+package pl.mbulawa.springproject.bootstrap;
 
-import domain.Author;
-import domain.Book;
+
+import pl.mbulawa.springproject.domain.Author;
+import pl.mbulawa.springproject.domain.Book;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import repositories.AuthorRepository;
-import repositories.BookRepository;
+import pl.mbulawa.springproject.repositories.AuthorRepository;
+import pl.mbulawa.springproject.repositories.BookRepository;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
-
 
     public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
